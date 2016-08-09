@@ -56,7 +56,7 @@ http://<your_machine_ip_address>:80
 
 ## Tagging and Deploying to AWS ECS
 
-Tag your docker image
+### Tag your docker image
 ```
 docker tag traqy/acme-su-webapp 593360083597.dkr.ecr.us-west-2.amazonaws.com/acme-su-webapp:vX.Y.Z
 ```
@@ -64,7 +64,7 @@ docker tag traqy/acme-su-webapp 593360083597.dkr.ecr.us-west-2.amazonaws.com/acm
 docker tag traqy/acme-su-webapp 593360083597.dkr.ecr.us-west-2.amazonaws.com/acme-su-webapp:v0.0.1
 ```
 
-Push your docker image to Amazon ECS Repo
+### Push your docker image to Amazon ECS Repo
 ```
 docker push 593360083597.dkr.ecr.us-west-2.amazonaws.com/acme-su-webapp:v0.0.1
 ``` 

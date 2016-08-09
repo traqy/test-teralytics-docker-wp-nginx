@@ -1,0 +1,12 @@
+FROM centos:6
+
+# Basic Requirements
+RUN yum -y install wget telnet curl vim
+
+# Install NFS client library
+RUN yum -y install nfs-utils nfs-utils-lib
+
+# Configure /etc/fstab
+RUN mkdir -p /mnt/acme-su-nfs
+RUN echo '52.221.222.174:/var/shareddir    /mnt/acme-su-nfs   nfs    nolock,rsize=8192,wsize=8192,timeo=14,intr' >> /etc/fstab
+#RUN mount -a

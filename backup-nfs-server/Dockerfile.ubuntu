@@ -1,0 +1,20 @@
+FROM ubuntu:14.04
+
+# Keep upstart from complaining
+RUN dpkg-divert --local --rename --add /sbin/initctl
+RUN ln -sf /bin/true /sbin/initctl
+
+# Let the conatiner know that there is no tty
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get update
+RUN apt-get -y upgrade
+
+# Basic Requirements
+RUN apt-get -y install wget telnet
+
+# Install NFS server library
+RUN apt-get -y install nfs-kernel-server
+RUN mkdir -p /export/users 
+RUN mount --bind /home/users /export/users
+RUN echo '/home/users    /export/users   none    bind  0  0' >> /etc/fstab
