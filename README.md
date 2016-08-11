@@ -41,6 +41,8 @@ docker run -p 8080:8080 -p 50000:50000 -v /Users/traqy/github/test-teralytics-do
 docker run -p 8080:8080 -p 50000:50000 -v /Users/traqy/github/docker/jenkins_home:/var/jenkins_home traqy/jenkins-acme-oss:v1
 ```
   * Browse http://192.168.99.100:8080/
+  * Jenkins Example Screenshots
+    * ![Image](./docs/acme-jenkins_screenshot.png?raw=true)
 ## To simulate mockup web application generating user data and daily backup
   * Run the mockup web app server container
     * http://192.168.99.100:8080/job/acme-mockup-app-deploy-container/
