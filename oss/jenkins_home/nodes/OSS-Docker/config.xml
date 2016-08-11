@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<slave>
+  <name>OSS-Docker</name>
+  <description></description>
+  <remoteFS>/var/jenkins</remoteFS>
+  <numExecutors>1</numExecutors>
+  <mode>NORMAL</mode>
+  <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
+  <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.11">
+    <host>10.8.2.11</host>
+    <port>22</port>
+    <credentialsId>e9941866-fb61-4f1d-8850-60b310737cbc</credentialsId>
+    <maxNumRetries>0</maxNumRetries>
+    <retryWaitTime>0</retryWaitTime>
+  </launcher>
+  <label>OSS</label>
+  <nodeProperties/>
+</slave>

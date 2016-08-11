@@ -1,0 +1,257 @@
+Started by user [8mha:AAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9kqLEwkoAAHTZj8AAAAA=[0mBernard Traquena
+Building remotely on [8mha:AAAAoB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYR/eT83ILSktQiff/gYF2X/OTs1CIA4o4Q38kAAAA=[0mOSS-Docker (OSS) in workspace /var/jenkins/workspace/acme-nfs-backup-daily
+[ssh-agent] Looking for ssh-agent implementation...
+[ssh-agent]   Java/JNR ssh-agent
+[ssh-agent] Registered BouncyCastle on the remote agent
+[ssh-agent] Started.
+[ssh-agent] Using credentials jenkins
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.upstream.url git@github.com:traqy/test-teralytics-docker-wp-nginx.git # timeout=10
+Fetching upstream changes from git@github.com:traqy/test-teralytics-docker-wp-nginx.git
+ > git --version # timeout=10
+using GIT_SSH to set credentials 
+ > git -c core.askpass=true fetch --tags --progress git@github.com:traqy/test-teralytics-docker-wp-nginx.git +refs/heads/*:refs/remotes/upstream/*
+ > git rev-parse refs/remotes/upstream/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/upstream/upstream/master^{commit} # timeout=10
+Checking out Revision d446ac9523dbbe984b0becb77e321331d72065b7 (refs/remotes/upstream/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f d446ac9523dbbe984b0becb77e321331d72065b7
+ > git rev-list d446ac9523dbbe984b0becb77e321331d72065b7 # timeout=10
+[acme-nfs-backup-daily] $ /bin/sh -xe /var/folders/sj/bs_npvzn7xj8yp_bznzz2hn80000gn/T/hudson6715169209603747599.sh
++ echo 'OSS Run Container Mockup Web'
+OSS Run Container Mockup Web
++ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/bin/
++ PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/bin/
+++ git log --oneline
+++ awk '{print $1}'
+++ head -n1
++ hashcommit=d446ac9
+++ docker-machine env default
++ eval 'export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://192.168.99.100:2376"
+export DOCKER_CERT_PATH="/Users/traqy/.docker/machine/machines/default"
+export DOCKER_MACHINE_NAME="default"
+# Run this command to configure your shell: 
+# eval $(docker-machine env default)'
+++ export DOCKER_TLS_VERIFY=1
+++ DOCKER_TLS_VERIFY=1
+++ export DOCKER_HOST=tcp://192.168.99.100:2376
+++ DOCKER_HOST=tcp://192.168.99.100:2376
+++ export DOCKER_CERT_PATH=/Users/traqy/.docker/machine/machines/default
+++ DOCKER_CERT_PATH=/Users/traqy/.docker/machine/machines/default
+++ export DOCKER_MACHINE_NAME=default
+++ DOCKER_MACHINE_NAME=default
++ cd backup-nfs-client
++ docker_name=backup-nfs-client-d446ac9-5
++ docker_run_container backup-nfs-client-d446ac9-5
++ container_name=backup-nfs-client-d446ac9-5
++ docker run -P --privileged=true -v /Users/traqy/github/test-teralytics-docker-wp-nginx/volume-data/upload:/var/www/upload --name=backup-nfs-client-d446ac9-5t traqy/acme-backup-nfs-client /root/scripts/backup.sh
+Back up script is under construction.
+Mount NFS 52.221.222.174:/var/shareddir
+rsync -az /var/www/upload /mnt/acme-su-nfs
+rsync: chown "/mnt/acme-su-nfs/upload" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB100_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB101_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB102_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB103_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB104_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB105_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB106_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB107_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB108_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB109_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB10_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB110_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB111_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB112_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB113_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB114_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB115_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB116_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB117_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB118_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB119_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB11_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB120_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB121_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB122_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB123_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB124_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB125_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB126_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB127_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB128_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB129_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB12_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB130_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB131_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB132_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB133_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB134_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB135_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB136_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB137_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB138_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB139_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB13_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB140_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB141_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB142_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB143_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB144_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB145_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB146_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB147_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB148_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB149_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB14_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB150_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB151_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB152_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB153_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB154_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB155_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB156_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB157_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB158_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB159_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB15_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB160_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB161_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB162_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB163_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB164_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB165_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB166_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB167_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB168_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB169_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB16_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB170_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB171_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB172_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB173_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB174_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB175_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB176_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB177_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB178_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB179_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB17_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB180_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB181_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB182_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB183_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB184_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB185_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB186_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB187_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB188_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB189_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB18_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB190_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB191_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB192_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB193_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB194_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB195_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB196_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB197_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB198_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB199_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB19_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB1_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB200_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB20_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB21_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB22_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB23_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB24_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB25_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB26_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB27_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB28_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB29_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB2_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB30_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB31_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB32_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB33_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB34_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB35_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB36_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB37_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB38_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB39_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB3_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB40_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB41_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB42_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB43_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB44_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB45_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB46_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB47_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB48_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB49_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB4_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB50_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB51_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB52_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB53_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB54_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB55_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB56_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB57_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB58_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB59_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB5_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB60_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB61_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB62_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB63_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB64_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB65_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB66_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB67_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB68_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB69_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB6_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB70_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB71_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB72_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB73_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB74_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB75_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB76_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB77_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB78_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB79_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB7_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB80_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB81_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB82_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB83_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB84_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB85_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB86_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB87_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB88_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB89_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB8_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB90_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB91_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB92_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB93_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB94_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB95_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB96_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB97_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB98_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB99_32_2016.pdf" failed: Operation not permitted (1)
+rsync: chown "/mnt/acme-su-nfs/upload/JohnDoehB9_32_2016.pdf" failed: Operation not permitted (1)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1183) [sender=3.1.0]
+Build step 'Execute shell' marked build as failure
+[ssh-agent] Stopped.
+Finished: FAILURE

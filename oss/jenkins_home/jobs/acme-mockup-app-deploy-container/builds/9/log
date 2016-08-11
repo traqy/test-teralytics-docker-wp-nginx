@@ -1,0 +1,45 @@
+Started by user [8mha:AAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9kqLEwkoAAHTZj8AAAAA=[0mBernard Traquena
+Building remotely on [8mha:AAAAoB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYR/eT83ILSktQiff/gYF2X/OTs1CIA4o4Q38kAAAA=[0mOSS-Docker (OSS) in workspace /var/jenkins/workspace/acme-mockup-app-deploy-container
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.upstream.url git@github.com:traqy/test-teralytics-docker-wp-nginx.git # timeout=10
+Fetching upstream changes from git@github.com:traqy/test-teralytics-docker-wp-nginx.git
+ > git --version # timeout=10
+using GIT_SSH to set credentials 
+ > git -c core.askpass=true fetch --tags --progress git@github.com:traqy/test-teralytics-docker-wp-nginx.git +refs/heads/*:refs/remotes/upstream/*
+ > git rev-parse refs/remotes/upstream/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/upstream/upstream/master^{commit} # timeout=10
+Checking out Revision d446ac9523dbbe984b0becb77e321331d72065b7 (refs/remotes/upstream/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f d446ac9523dbbe984b0becb77e321331d72065b7
+ > git rev-list d446ac9523dbbe984b0becb77e321331d72065b7 # timeout=10
+[acme-mockup-app-deploy-container] $ /bin/sh -xe /var/folders/sj/bs_npvzn7xj8yp_bznzz2hn80000gn/T/hudson3077747181431871501.sh
++ echo 'OSS Run Container Mockup Web'
+OSS Run Container Mockup Web
++ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/bin/
++ PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/bin/
+++ git log --oneline
+++ awk '{print $1}'
+++ head -n1
++ hashcommit=d446ac9
+++ docker-machine env default
++ eval 'export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://192.168.99.100:2376"
+export DOCKER_CERT_PATH="/Users/traqy/.docker/machine/machines/default"
+export DOCKER_MACHINE_NAME="default"
+# Run this command to configure your shell: 
+# eval $(docker-machine env default)'
+++ export DOCKER_TLS_VERIFY=1
+++ DOCKER_TLS_VERIFY=1
+++ export DOCKER_HOST=tcp://192.168.99.100:2376
+++ DOCKER_HOST=tcp://192.168.99.100:2376
+++ export DOCKER_CERT_PATH=/Users/traqy/.docker/machine/machines/default
+++ DOCKER_CERT_PATH=/Users/traqy/.docker/machine/machines/default
+++ export DOCKER_MACHINE_NAME=default
+++ DOCKER_MACHINE_NAME=default
++ cd application-mock-up
++ docker_name=acme-mock-up-app-d446ac9
++ /usr/local/bin/docker rm acme-mock-up-app-d446ac9
+Error response from daemon: No such container: acme-mock-up-app-d446ac9
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

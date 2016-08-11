@@ -1,0 +1,25 @@
+Started by user [8mha:AAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9kqLEwkoAAHTZj8AAAAA=[0mBernard Traquena
+Building remotely on [8mha:AAAAoB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYR/eT83ILSktQiff/gYF2X/OTs1CIA4o4Q38kAAAA=[0mOSS-Docker (OSS) in workspace /var/jenkins/workspace/acme-nfs-backup-daily
+[ssh-agent] Looking for ssh-agent implementation...
+[ssh-agent]   Java/JNR ssh-agent
+[ssh-agent] Registered BouncyCastle on the remote agent
+[ssh-agent] Started.
+[ssh-agent] Using credentials jenkins
+Cloning the remote Git repository
+Cloning repository git@github.com:traqy/test-teralytics-docker-wp-nginx.git
+ > git init /var/jenkins/workspace/acme-nfs-backup-daily # timeout=10
+Fetching upstream changes from git@github.com:traqy/test-teralytics-docker-wp-nginx.git
+ > git --version # timeout=10
+using GIT_SSH to set credentials 
+ > git -c core.askpass=true fetch --tags --progress git@github.com:traqy/test-teralytics-docker-wp-nginx.git +refs/heads/*:refs/remotes/upstream/*
+ > git config remote.upstream.url git@github.com:traqy/test-teralytics-docker-wp-nginx.git # timeout=10
+ > git config --add remote.upstream.fetch +refs/heads/*:refs/remotes/upstream/* # timeout=10
+ > git config remote.upstream.url git@github.com:traqy/test-teralytics-docker-wp-nginx.git # timeout=10
+Fetching upstream changes from git@github.com:traqy/test-teralytics-docker-wp-nginx.git
+using GIT_SSH to set credentials 
+ > git -c core.askpass=true fetch --tags --progress git@github.com:traqy/test-teralytics-docker-wp-nginx.git +refs/heads/*:refs/remotes/upstream/*
+ > git rev-parse refs/remotes/upstream/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/upstream/upstream/master^{commit} # timeout=10
+ > git rev-parse upstream/master^{commit} # timeout=10
+ERROR: Couldn't find any revision to build. Verify the repository and branch configuration for this job.
+[8mha:AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mFinished: FAILURE

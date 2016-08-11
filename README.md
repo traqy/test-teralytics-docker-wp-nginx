@@ -34,6 +34,10 @@
  ## CI/CD Jenkins
   * Boot Jenkins Docker OSS for ACME using dockerOS Virtual Machine in local mac
 ```
+docker run -p 8080:8080 -p 50000:50000 -v /Users/traqy/github/test-teralytics-docker-wp-nginx/oss/jenkins_home:/var/jenkins_home traqy/jenkins-acme-oss:v1
+```
+  * or
+```
 docker run -p 8080:8080 -p 50000:50000 -v /Users/traqy/github/docker/jenkins_home:/var/jenkins_home traqy/jenkins-acme-oss:v1
 ```
   * Browse http://192.168.99.100:8080/

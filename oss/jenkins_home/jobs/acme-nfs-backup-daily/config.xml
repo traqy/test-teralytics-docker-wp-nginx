@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.5.3">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <name>upstream</name>
+        <refspec>+refs/heads/*:refs/remotes/upstream/*</refspec>
+        <url>git@github.com:traqy/test-teralytics-docker-wp-nginx.git</url>
+        <credentialsId>847cc22a-eb37-4b3f-a6c9-e45311e227cf</credentialsId>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>*/master</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="list"/>
+    <extensions/>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <hudson.triggers.TimerTrigger>
+      <spec>H 02 1-31 1-12 1-7</spec>
+    </hudson.triggers.TimerTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>echo &quot;OSS Run Container Mockup Web&quot;
+
+export PATH=$PATH:/usr/local/bin/
+
+
+function docker_build(){
+    docker build -t=&quot;traqy/acme-backup-nfs-client&quot; .
+}
+
+function docker_run_container(){
+   container_name=$1
+   
+   # docker run
+   docker run -P --privileged=true \
+   -v /Users/traqy/github/test-teralytics-docker-wp-nginx/volume-data/upload:/var/www/upload \
+   --name=${container_name}t traqy/acme-backup-nfs-client  /root/scripts/backup.sh
+}
+
+
+hashcommit=`git log --oneline | awk &apos;{print $1}&apos; | head -n1`
+
+eval &quot;$(docker-machine env default)&quot;
+
+cd backup-nfs-client
+
+
+docker_build
+
+docker_name=backup-nfs-client-${hashcommit}-${BUILD_NUMBER}
+docker_run_container $docker_name</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <jenkins.plugins.slack.SlackNotifier plugin="slack@2.0.1">
+      <teamDomain>migme</teamDomain>
+      <authToken>cc9l3v05srEOMVkcZddJyVuN</authToken>
+      <room>devops</room>
+      <startNotification>true</startNotification>
+      <notifySuccess>true</notifySuccess>
+      <notifyAborted>true</notifyAborted>
+      <notifyNotBuilt>true</notifyNotBuilt>
+      <notifyUnstable>true</notifyUnstable>
+      <notifyFailure>true</notifyFailure>
+      <notifyBackToNormal>true</notifyBackToNormal>
+      <notifyRepeatedFailure>false</notifyRepeatedFailure>
+      <includeTestSummary>false</includeTestSummary>
+      <commitInfoChoice>NONE</commitInfoChoice>
+      <includeCustomMessage>false</includeCustomMessage>
+      <customMessage></customMessage>
+    </jenkins.plugins.slack.SlackNotifier>
+  </publishers>
+  <buildWrappers>
+    <com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper plugin="ssh-agent@1.13">
+      <credentialIds>
+        <string>847cc22a-eb37-4b3f-a6c9-e45311e227cf</string>
+      </credentialIds>
+      <ignoreMissing>false</ignoreMissing>
+    </com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper>
+  </buildWrappers>
+</project>

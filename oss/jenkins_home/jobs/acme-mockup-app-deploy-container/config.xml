@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.5.3">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <name>upstream</name>
+        <refspec>+refs/heads/*:refs/remotes/upstream/*</refspec>
+        <url>git@github.com:traqy/test-teralytics-docker-wp-nginx.git</url>
+        <credentialsId>e9941866-fb61-4f1d-8850-60b310737cbc</credentialsId>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>*/master</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="list"/>
+    <extensions/>
+  </scm>
+  <assignedNode>OSS-Docker</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>echo &quot;OSS Run Container Mockup Web&quot;
+
+export PATH=$PATH:/usr/local/bin/
+
+hashcommit=`git log --oneline | awk &apos;{print $1}&apos; | head -n1`
+
+eval &quot;$(docker-machine env default)&quot;
+
+cd application-mock-up
+
+docker_name=acme-mock-up-app-${hashcommit}-${BUILD_NUMBER}
+
+/usr/local/bin/docker run -d -P --privileged=true -v \
+/Users/traqy/github/test-teralytics-docker-wp-nginx/volume-data/upload:/var/www/upload \
+--name=${docker_name} traqy/acme-mock-up-app  /root/scripts/apps.sh</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>

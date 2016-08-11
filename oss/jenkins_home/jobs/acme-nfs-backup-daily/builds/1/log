@@ -1,0 +1,11 @@
+Started by user [8mha:AAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9kqLEwkoAAHTZj8AAAAA=[0mBernard Traquena
+Building remotely on [8mha:AAAAoB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYR/eT83ILSktQiff/gYF2X/OTs1CIA4o4Q38kAAAA=[0mOSS-Docker (OSS) in workspace /var/jenkins/workspace/acme-nfs-backup-daily
+[ssh-agent] Looking for ssh-agent implementation...
+[ssh-agent]   Java/JNR ssh-agent
+[ssh-agent] Registered BouncyCastle on the remote agent
+[ssh-agent] Started.
+[ssh-agent] Using credentials jenkins
+[acme-nfs-backup-daily] $ /bin/sh -xe /var/folders/js/n3lssqkd69gf2l5krzy9dx3r0000gq/T/hudson2576354441425910659.sh
++ ls -l
+[ssh-agent] Stopped.
+Finished: SUCCESS

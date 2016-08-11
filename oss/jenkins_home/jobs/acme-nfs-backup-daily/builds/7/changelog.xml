@@ -1,0 +1,23 @@
+commit 720f122025da3fb967a67f31dd41f4149bb73da7
+tree 72a799fb781176862010cecfb04ffa5d75b8b73b
+parent 240f1fcb60bd580e65e8ba05966c7e35d14af0f3
+author traqy <bernard.t@mig.me> 2016-08-11 06:28:48 +0800
+committer traqy <bernard.t@mig.me> 2016-08-11 06:28:48 +0800
+
+    Update README. Added jenkins usage.
+
+
+
+:100644 100644 f68ef58de220f79550395a23e888f4ae24593bd0 b84fbade99637267ad4185f233f21310a6d2716f M	README.md
+commit 240f1fcb60bd580e65e8ba05966c7e35d14af0f3
+tree 7abe7f28c019caf5153b83ee40780dca0d3df224
+parent 9e5d3484fbdfcb328f4f171bf84770b7fe7449e2
+author traqy <bernard.t@mig.me> 2016-08-11 06:26:24 +0800
+committer traqy <bernard.t@mig.me> 2016-08-11 06:26:24 +0800
+
+    Change rsync flag.
+
+
+
+:100644 100644 087e928a55a44685e3b59b2d3df972e23b4e7563 f68ef58de220f79550395a23e888f4ae24593bd0 M	README.md
+:100755 100755 241ab74bc984820dc49d44631916c79bdb6ece11 0807ad6690aff8f1e8d06db919e9255185da1ee8 M	backup-nfs-client/backup.sh

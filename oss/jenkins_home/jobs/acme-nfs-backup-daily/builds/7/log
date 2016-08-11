@@ -1,0 +1,103 @@
+Started by user [8mha:AAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9kqLEwkoAAHTZj8AAAAA=[0mBernard Traquena
+Building remotely on [8mha:AAAAoB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYR/eT83ILSktQiff/gYF2X/OTs1CIA4o4Q38kAAAA=[0mOSS-Docker (OSS) in workspace /var/jenkins/workspace/acme-nfs-backup-daily
+[ssh-agent] Looking for ssh-agent implementation...
+[ssh-agent]   Java/JNR ssh-agent
+[ssh-agent] Registered BouncyCastle on the remote agent
+[ssh-agent] Started.
+[ssh-agent] Using credentials jenkins
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.upstream.url git@github.com:traqy/test-teralytics-docker-wp-nginx.git # timeout=10
+Fetching upstream changes from git@github.com:traqy/test-teralytics-docker-wp-nginx.git
+ > git --version # timeout=10
+using GIT_SSH to set credentials 
+ > git -c core.askpass=true fetch --tags --progress git@github.com:traqy/test-teralytics-docker-wp-nginx.git +refs/heads/*:refs/remotes/upstream/*
+ > git rev-parse refs/remotes/upstream/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/upstream/upstream/master^{commit} # timeout=10
+Checking out Revision 31f36362b83bfeda66b66910844df53b802f7831 (refs/remotes/upstream/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 31f36362b83bfeda66b66910844df53b802f7831
+ > git rev-list d446ac9523dbbe984b0becb77e321331d72065b7 # timeout=10
+[acme-nfs-backup-daily] $ /bin/sh -xe /var/folders/sj/bs_npvzn7xj8yp_bznzz2hn80000gn/T/hudson9169836214312644237.sh
++ echo 'OSS Run Container Mockup Web'
+OSS Run Container Mockup Web
++ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/bin/
++ PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/bin/
+++ git log --oneline
+++ awk '{print $1}'
+++ head -n1
++ hashcommit=31f3636
+++ docker-machine env default
++ eval 'export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://192.168.99.100:2376"
+export DOCKER_CERT_PATH="/Users/traqy/.docker/machine/machines/default"
+export DOCKER_MACHINE_NAME="default"
+# Run this command to configure your shell: 
+# eval $(docker-machine env default)'
+++ export DOCKER_TLS_VERIFY=1
+++ DOCKER_TLS_VERIFY=1
+++ export DOCKER_HOST=tcp://192.168.99.100:2376
+++ DOCKER_HOST=tcp://192.168.99.100:2376
+++ export DOCKER_CERT_PATH=/Users/traqy/.docker/machine/machines/default
+++ DOCKER_CERT_PATH=/Users/traqy/.docker/machine/machines/default
+++ export DOCKER_MACHINE_NAME=default
+++ DOCKER_MACHINE_NAME=default
++ cd backup-nfs-client
++ docker_build
++ docker build -t=traqy/acme-backup-nfs-client .
+Sending build context to Docker daemon 7.168 kB
+Step 1 : FROM ubuntu:14.04
+ ---> 0ccb13bf1954
+Step 2 : RUN dpkg-divert --local --rename --add /sbin/initctl
+ ---> Using cache
+ ---> e3dafd1885e1
+Step 3 : RUN ln -sf /bin/true /sbin/initctl
+ ---> Using cache
+ ---> c961cbbef3e9
+Step 4 : ENV DEBIAN_FRONTEND noninteractive
+ ---> Using cache
+ ---> e515162a6ec9
+Step 5 : RUN apt-get update
+ ---> Using cache
+ ---> 1577e933ab5f
+Step 6 : RUN apt-get -y upgrade
+ ---> Using cache
+ ---> a474b2d9810c
+Step 7 : RUN apt-get -y install wget telnet curl vim
+ ---> Using cache
+ ---> 1c8e9c5d2dd9
+Step 8 : RUN apt-get -y install nfs-common
+ ---> Using cache
+ ---> 9b91b406f5ac
+Step 9 : RUN apt-get -y install rsync
+ ---> Using cache
+ ---> 65813be36655
+Step 10 : RUN mkdir -p /mnt/acme-su-nfs
+ ---> Using cache
+ ---> fe2359e7aa6a
+Step 11 : RUN echo '52.221.222.174:/var/shareddir    /mnt/acme-su-nfs   nfs    nolock,rsize=8192,wsize=8192,timeo=14,intr' >> /etc/fstab
+ ---> Using cache
+ ---> f7241f5b845e
+Step 12 : RUN mkdir -p /var/www/upload
+ ---> Using cache
+ ---> 9aef24657a60
+Step 13 : RUN mkdir /root/scripts
+ ---> Using cache
+ ---> 7eff6777284b
+Step 14 : COPY backup.sh /root/scripts/
+ ---> f3ae99170ff4
+Removing intermediate container 892eac461899
+Successfully built f3ae99170ff4
++ docker_name=backup-nfs-client-31f3636-7
++ docker_run_container backup-nfs-client-31f3636-7
++ container_name=backup-nfs-client-31f3636-7
++ docker run -P --privileged=true -v /Users/traqy/github/test-teralytics-docker-wp-nginx/volume-data/upload:/var/www/upload --name=backup-nfs-client-31f3636-7t traqy/acme-backup-nfs-client /root/scripts/backup.sh
+Back up script is under construction.
+Mount NFS 52.221.222.174:/var/shareddir
+rsync -az /var/www/upload /mnt/acme-su-nfs
+sending incremental file list
+
+sent 4,665 bytes  received 17 bytes  851.27 bytes/sec
+total size is 2,492  speedup is 0.53
+[ssh-agent] Stopped.
+Finished: SUCCESS

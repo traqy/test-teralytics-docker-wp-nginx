@@ -1,0 +1,30 @@
+Started by user [8mha:AAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9kqLEwkoAAHTZj8AAAAA=[0mBernard Traquena
+Building on master in workspace /var/jenkins_home/workspace/acme-mockup-app-deploy-container
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.upstream.url git@github.com:traqy/test-teralytics-docker-wp-nginx.git # timeout=10
+Fetching upstream changes from git@github.com:traqy/test-teralytics-docker-wp-nginx.git
+ > git --version # timeout=10
+using GIT_SSH to set credentials 
+ > git -c core.askpass=true fetch --tags --progress git@github.com:traqy/test-teralytics-docker-wp-nginx.git +refs/heads/*:refs/remotes/upstream/*
+ > git rev-parse refs/remotes/upstream/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/upstream/upstream/master^{commit} # timeout=10
+Checking out Revision d446ac9523dbbe984b0becb77e321331d72065b7 (refs/remotes/upstream/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f d446ac9523dbbe984b0becb77e321331d72065b7
+ > git rev-list d446ac9523dbbe984b0becb77e321331d72065b7 # timeout=10
+[acme-mockup-app-deploy-container] $ /bin/sh -xe /tmp/hudson2962742726527445690.sh
++ echo OSS Run Container Mockup Web
+OSS Run Container Mockup Web
++ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
++ head -n1
++ awk {print $1}
++ git log --oneline
++ hashcommit=d446ac9
++ docker-machine env default
+/tmp/hudson2962742726527445690.sh: 8: /tmp/hudson2962742726527445690.sh: docker-machine: not found
++ eval 
++ /usr/local/bin/docker run -it -P --privileged=true -v /Users/traqy/github/test-teralytics-docker-wp-nginx/volume-data/upload:/var/www/upload --name=acme-mock-up-app-d446ac9 traqy/acme-mock-up-app /root/scripts/apps.sh
+/tmp/hudson2962742726527445690.sh: 10: /tmp/hudson2962742726527445690.sh: /usr/local/bin/docker: not found
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

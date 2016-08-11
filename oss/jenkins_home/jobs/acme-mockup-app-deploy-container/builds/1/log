@@ -1,0 +1,18 @@
+Started by user [8mha:AAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9kqLEwkoAAHTZj8AAAAA=[0mBernard Traquena
+Building on master in workspace /var/jenkins_home/workspace/acme-mockup-app-deploy-container
+[acme-mockup-app-deploy-container] $ /bin/sh -xe /tmp/hudson6819294644730267715.sh
++ echo OSS Run Container Mockup Web
+OSS Run Container Mockup Web
++ + head -n1
+git log --oneline
+fatal: Not a git repository (or any parent up to mount point /var/jenkins_home)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
++ awk {print $1}
++ hashcommit=
++ docker-machine env default
+/tmp/hudson6819294644730267715.sh: 6: /tmp/hudson6819294644730267715.sh: docker-machine: not found
++ eval 
++ docker run -it -P --privileged=true -v /Users/traqy/github/test-teralytics-docker-wp-nginx/volume-data/upload:/var/www/upload --name=acme-mock-up-app- traqy/acme-mock-up-app /root/scripts/apps.sh
+/tmp/hudson6819294644730267715.sh: 8: /tmp/hudson6819294644730267715.sh: docker: not found
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE
