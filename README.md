@@ -1,21 +1,24 @@
 # Teralytics Technical Challenge
 
 ## Proposal for ACME Singapore University Web Application
-  * [Architectural Diagram]
+  * Architectural Diagram
     * ![Image](./docs/acme-aws-diagram.png?raw=true)
   * AWS Infrastructure Resource Stack 
-    * EC2 Instances
+    * EC2 Instances (Autoscale)
     * Elastic Load Balancer (ELB)
     * Elastic Block Store (EBS)
     * Route53 DNS
-    * Optional S3 Backup
-    * Optional Glacier Permanent Backup
+    * ClpudWatch Free Tier
+    * For future consideration
+      * Optional S3 Backup
+      * Optional Glacier Permanent Backup
+      * EFS
   * [Cost and Sizing](https://github.com/traqy/test-teralytics-docker-wp-nginx/raw/acme-su-webapp/docs/Tera-Test%20ACME-SU%20Proposal.xlsx)
 
 
 ## Backup Script Deployment
-### Assumptions
-  * Remote NFS Server Shared Storage for offsite backup
+### Implementation using Docker and Assumptions
+  * Remote NFS Server Shared Storage for offsite backup.
 ```
 52.221.222.174:/var/shareddir
 ```
