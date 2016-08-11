@@ -1,7 +1,8 @@
 # Teralytics Technical Challenge
 
 ## Proposal for ACME Singapore University Web Application
-  * [Architectural Diagram](https://github.com/traqy/test-teralytics-docker-wp-nginx/raw/acme-su-webapp/docs/acme-aws-diagram.png)
+  * [Architectural Diagram]
+    * ![Image](./docs/acme-aws-diagram.png?raw=true)
   * AWS Infrastructure Resource Stack 
     * EC2 Instances
     * Elastic Load Balancer (ELB)
