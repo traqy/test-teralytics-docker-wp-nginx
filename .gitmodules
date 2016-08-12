@@ -1,9 +1,6 @@
-[submodule "nfs-server"]
-	path = nfs-server
-	url = git@github.com:ErezHorev/dockerized_nfs_server.git
 [submodule "oss/nfs-server"]
 	path = oss/nfs-server
-	url = git@github.com:ErezHorev/dockerized_nfs_server.git
+	url = git@github.com:traqy/dockerized_nfs_server.git
 [submodule "oss/jenkins-server"]
 	path = oss/jenkins-server
-	url = git@github.com:jenkinsci/docker.git
+	url = git@github.com:traqy/docker.git
