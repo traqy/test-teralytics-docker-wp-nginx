@@ -1,2 +1,3 @@
 *.swp
 .DS_Store
+oss/jenkins_home

@@ -31,21 +31,74 @@
   * I prefer to run the backup script using Jenkins jobs with the following automated integration below. 
       * Send Slack alert notification message
       * JIRA automated creation of ticket
- ## CI/CD Jenkins
+
+### Build Docker Images for the following stack:
+  * CI/CD Jenkins (traqy/acme-oss-jenkins)
+```
+PROJECT_PATH=/Users/traqy/github/test-teralytics-docker-wp-nginx
+cd ./oss/jenkins-server/
+DOCKER_NAME=acme-oss-jenkins
+docker build -t="traqy/${DOCKER_NAME}" .
+```
+  * NFS server (traqy/acme-oss-nfs-server)
+```
+DOCKER_NAME=acme-oss-nfs-server
+cd ./oss/nfs-server/docker && ./build.sh && cd ../../../
+```   
+   * Mockup Application (traqy/acme-app-mockup)
+```
+cd application-mock-up
+DOCKER_NAME=acme-app-mockup
+docker build -t="traqy/${DOCKER_NAME}" .
+cd ..
+```
+   * Backup Job (traqy/acme-oss-backup-job)
+```
+cd backup-nfs-client
+DOCKER_NAME=acme-oss-backup-job
+docker build -t="traqy/${DOCKER_NAME}" .
+```
+
+## Boot CI/CD Jenkins
+
   * Boot Jenkins Docker OSS for ACME using dockerOS Virtual Machine in local mac
+    * Run jenkins container acme-oss-jenkins
 ```
-docker run -p 8080:8080 -p 50000:50000 -v /Users/traqy/github/test-teralytics-docker-wp-nginx/oss/jenkins_home:/var/jenkins_home traqy/jenkins-acme-oss:v1
-```
-  * or
-```
-docker run -p 8080:8080 -p 50000:50000 -v /Users/traqy/github/docker/jenkins_home:/var/jenkins_home traqy/jenkins-acme-oss:v1
+DOCKER_NAME=acme-oss-jenkins
+
+docker ps -a | grep "${DOCKER_NAME}" | awk '{print $1}' | xargs docker rm
+docker run -d -p 8080:8080 -p 50000:50000 --name=acme-oss-jenkins -v ${PROJECT_PATH}/oss/jenkins_home:/var/jenkins_home traqy/${DOCKER_NAME}
 ```
   * Browse http://192.168.99.100:8080/
   * Jenkins Example Screenshots
     * ![Image](./docs/acme-jenkins_screenshot.png?raw=true)
-    
-## To simulate mockup web application generating user data and daily backup
+
+## Backup Simulation
+
+### Summary Implementation Outline
+
+  * NFS
+  * Run mockup web server in the background
+  * Run backup job
+
+### Sequence of actions
+
+  * Run NFS remote server (Simulate University Remote NFS Server)
+```
+DOCKER_NAME=acme-oss-nfs-server
+
+docker ps -a | grep "${DOCKER_NAME}" | awk '{print $1}' | xargs docker rm
+cd oss/nfs-server 
+./start.sh /var/shareddir 
+cd ../../
+docker ps
+```
   * Run the mockup web app server container
-    * http://192.168.99.100:8080/job/acme-mockup-app-deploy-container/
+    * Via Jenkins
+      * http://192.168.99.100:8080/job/acme-mockup-app-deploy-container/
   * Run the daily backup job manually
     * http://192.168.99.100:8080/job/acme-nfs-backup-daily/
+
+### Validation
+
+  * Check remote NFS server. Verify if the files are backed up.

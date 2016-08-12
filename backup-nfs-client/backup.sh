@@ -2,7 +2,7 @@
 
 echo "Back up script is under construction".
 
-echo "Mount NFS 52.221.222.174:/var/shareddir"
+echo "Mount NFS 52.221.222.174:/exports/var/shareddir"
 mount -a
 
 export SOURCE_DIR=/var/www/upload

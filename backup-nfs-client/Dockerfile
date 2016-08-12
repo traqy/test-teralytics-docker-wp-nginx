@@ -21,7 +21,8 @@ RUN apt-get -y install rsync
 
 # Configure /etc/fstab
 RUN mkdir -p /mnt/acme-su-nfs
-RUN echo '52.221.222.174:/var/shareddir    /mnt/acme-su-nfs   nfs    nolock,rsize=8192,wsize=8192,timeo=14,intr' >> /etc/fstab
+#RUN echo '52.221.222.174:/var/shareddir    /mnt/acme-su-nfs   nfs    nolock,rsize=8192,wsize=8192,timeo=14,intr' >> /etc/fstab
+RUN echo '172.17.0.2:/exports/var/shareddir /mnt/acme-su-nfs nfs nolock,rsize=8192,wsize=8192,timeo=14,intr' >> /etc/fstab
 
 # Upload volume data dir
 RUN mkdir -p /var/www/upload
