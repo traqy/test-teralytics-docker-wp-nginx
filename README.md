@@ -82,7 +82,10 @@ docker run -d -p 8080:8080 -p 50000:50000 --name=acme-oss-jenkins -v ${PROJECT_P
   * Run backup job
 
 ### Sequence of actions
-
+  * Define acme-su-net subnet
+```
+docker network create --subnet=172.18.0.0/16 acme-su-net
+```
   * Run NFS remote server (Simulate University Remote NFS Server)
 ```
 DOCKER_NAME=acme-oss-nfs-server

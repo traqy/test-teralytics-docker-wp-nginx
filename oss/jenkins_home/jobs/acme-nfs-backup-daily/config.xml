@@ -49,7 +49,7 @@ function docker_run_container(){
     fi
   
     # docker run
-    docker run -P --privileged=true \
+    docker run --net acme-su-net --ip 172.18.0.4 -P --privileged=true \
     -v /Users/traqy/github/test-teralytics-docker-wp-nginx/volume-data/upload:/var/www/upload \
     --name=${docker_name} traqy/${docker_name}  /root/scripts/backup.sh
 }

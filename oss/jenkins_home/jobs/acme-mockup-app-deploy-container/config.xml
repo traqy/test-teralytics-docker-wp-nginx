@@ -61,7 +61,7 @@ function run_container(){
         echo &quot;Container $docker_name does not exist.&quot;
     fi
 
-	/usr/local/bin/docker run -P --privileged=true -v \
+	/usr/local/bin/docker run --net acme-su-net --ip 172.18.0.3 -P --privileged=true -v \
 	/Users/traqy/github/test-teralytics-docker-wp-nginx/volume-data/upload:/var/www/upload \
 	--name=${docker_name} traqy/${docker_name}  /root/scripts/apps.sh
 
