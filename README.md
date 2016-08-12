@@ -105,3 +105,6 @@ docker ps
 ### Validation
 
   * Check remote NFS server. Verify if the files are backed up.
+```
+docker exec acme-oss-nfs-server ls -l /exports/var/shareddir/upload
+```
