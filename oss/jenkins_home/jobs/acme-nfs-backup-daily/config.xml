@@ -16,7 +16,7 @@
     </userRemoteConfigs>
     <branches>
       <hudson.plugins.git.BranchSpec>
-        <name>*/master</name>
+        <name>*/acme-su-web-clean</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
@@ -39,32 +39,24 @@
 
 export PATH=$PATH:/usr/local/bin/
 
-
-function docker_build(){
-    docker build -t=&quot;traqy/acme-backup-nfs-client&quot; .
-}
-
 function docker_run_container(){
-   container_name=$1
-   
-   # docker run
-   docker run -P --privileged=true \
-   -v /Users/traqy/github/test-teralytics-docker-wp-nginx/volume-data/upload:/var/www/upload \
-   --name=${container_name}t traqy/acme-backup-nfs-client  /root/scripts/backup.sh
+
+    docker_name=$1
+    if [ ! $docker_name = &quot;&quot; ]; then
+        docker ps -a | grep &quot;${docker_name}&quot; | awk &apos;{print $1}&apos; | xargs docker rm
+    else
+        echo &quot;Container $docker_name does not exist.&quot;
+    fi
+  
+    # docker run
+    docker run -P --privileged=true \
+    -v /Users/traqy/github/test-teralytics-docker-wp-nginx/volume-data/upload:/var/www/upload \
+    --name=${docker_name} traqy/${docker_name}  /root/scripts/backup.sh
 }
-
-
-hashcommit=`git log --oneline | awk &apos;{print $1}&apos; | head -n1`
 
 eval &quot;$(docker-machine env default)&quot;
-
-cd backup-nfs-client
-
-
-docker_build
-
-docker_name=backup-nfs-client-${hashcommit}-${BUILD_NUMBER}
-docker_run_container $docker_name</command>
+docker_run_container acme-oss-backup-job
+</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>

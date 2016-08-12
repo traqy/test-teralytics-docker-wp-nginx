@@ -16,7 +16,7 @@
     </userRemoteConfigs>
     <branches>
       <hudson.plugins.git.BranchSpec>
-        <name>*/master</name>
+        <name>*/acme-su-web-clean</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
@@ -63,7 +63,7 @@ function run_container(){
 
 	/usr/local/bin/docker run -P --privileged=true -v \
 	/Users/traqy/github/test-teralytics-docker-wp-nginx/volume-data/upload:/var/www/upload \
-	--name=${docker_name} traqy/acme-mock-up-app  /root/scripts/apps.sh
+	--name=${docker_name} traqy/${docker_name}  /root/scripts/apps.sh
 
 }
 

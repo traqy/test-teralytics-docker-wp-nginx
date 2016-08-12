@@ -3,7 +3,7 @@
   <name>OSS-Docker</name>
   <description></description>
   <remoteFS>/var/jenkins</remoteFS>
-  <numExecutors>1</numExecutors>
+  <numExecutors>2</numExecutors>
   <mode>NORMAL</mode>
   <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
   <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.11">
