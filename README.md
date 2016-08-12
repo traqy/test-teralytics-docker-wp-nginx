@@ -31,21 +31,56 @@
   * I prefer to run the backup script using Jenkins jobs with the following automated integration below. 
       * Send Slack alert notification message
       * JIRA automated creation of ticket
+### Build Docker Images for the following stack:
+  * CI/CD Jenkins
+    * Build jenkins image acme-oss-jenkins
+
+```
+PROJECT_PATH=/Users/traqy/github/test-teralytics-docker-wp-nginx
+cd ./oss/jenkins-server/
+DOCKER_NAME=acme-oss-jenkins
+docker build -t="traqy/${DOCKER_NAME}" .
+```
+  * NFS server
+    * Build image
+```
+cd ./oss/nfs-server/docker && ./build.sh && cd ../../../
+```   
+   * Mockup Application
+```
+cd application-mock-up
+DOCKER_NAME=acme-app-mockup
+docker build -t="traqy/${DOCKER_NAME}" .
+cd ..
+```
+   * Backup Job
+```
+cd backup-nfs-client
+DOCKER_NAME=acme-oss-backup
+docker build -t="traqy/${DOCKER_NAME}" .
+```
+
+
  ## CI/CD Jenkins
   * Boot Jenkins Docker OSS for ACME using dockerOS Virtual Machine in local mac
+    * Run jenkins container acme-oss-jenkins
 ```
-docker run -p 8080:8080 -p 50000:50000 -v /Users/traqy/github/test-teralytics-docker-wp-nginx/oss/jenkins_home:/var/jenkins_home traqy/jenkins-acme-oss:v1
-```
-  * or
-```
-docker run -p 8080:8080 -p 50000:50000 -v /Users/traqy/github/docker/jenkins_home:/var/jenkins_home traqy/jenkins-acme-oss:v1
+docker rm ${DOCKER_NAME}
+docker run -d -p 8080:8080 -p 50000:50000 --name=acme-oss-jenkins -v ${PROJECT_PATH}/oss/jenkins_home:/var/jenkins_home traqy/${DOCKER_NAME}
 ```
   * Browse http://192.168.99.100:8080/
   * Jenkins Example Screenshots
     * ![Image](./docs/acme-jenkins_screenshot.png?raw=true)
-    
+
 ## To simulate mockup web application generating user data and daily backup
+  * Run NFS remote server (Simulate University Remote NFS Server)
   * Run the mockup web app server container
-    * http://192.168.99.100:8080/job/acme-mockup-app-deploy-container/
+    * Jenkins
+      * http://192.168.99.100:8080/job/acme-mockup-app-deploy-container/
+    * Manual local console terminal
+  * Run Remote NFS server mockup as docker nfs server
+```
+./oss/nfs-server/start.sh /var/shareddir/
+```
   * Run the daily backup job manually
     * http://192.168.99.100:8080/job/acme-nfs-backup-daily/
