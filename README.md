@@ -32,6 +32,10 @@
       * Send Slack alert notification message
       * JIRA automated creation of ticket
 
+### Checkout Github Repo
+```
+git clone --recursive git@github.com:traqy/test-teralytics-docker-wp-nginx.git
+```
 ### Build Docker Images for the following stack:
   * CI/CD Jenkins (traqy/acme-oss-jenkins)
 ```
