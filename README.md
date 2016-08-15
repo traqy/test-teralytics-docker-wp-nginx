@@ -8,7 +8,7 @@
     * Elastic Load Balancer (ELB)
     * Elastic Block Store (EBS)
     * Route53 DNS
-    * ClpudWatch Free Tier
+    * CloudWatch Free Tier
     * For future consideration
       * Optional S3 Backup
       * Optional Glacier Permanent Backup
